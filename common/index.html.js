@@ -1,5 +1,14 @@
     var siteId ="b1c2c2a442774357b5694f8b371a2f7e" ;//站点id,搜索里调用
 
+function getSiteRoot() {
+    var segs = window.location.pathname.split('/').filter(function(v) { return v.length > 0; });
+    if (segs.length > 0 && segs[0].indexOf('.') === -1 && ['css','js','images','audio','common','flex-tutorial','products','school'].indexOf(segs[0]) === -1) {
+        return '/' + segs[0];
+    }
+    return '';
+}
+var rootPath = getSiteRoot();
+
 $(function(){
 $('.gr-wrap ul li').hover(function() {
 $(this).find('.sideDown').stop(true, true).slideDown(400);
@@ -22,13 +31,13 @@ document.write('<div class="topfix">');
     document.write('</div>');
 document.write('<div class="header" style="margin-bottom: 15px">');
     document.write('<div class="header-content clearfix">');
-    document.write('<a href="/index.html" title="广发期货"><img class="logo" src="/images/logo.png"/></a>');
+    document.write('<a href="' + rootPath + '/index.html" title="广发期货"><img class="logo" src="' + rootPath + '/images/logo.png"/></a>');
     document.write('<div class="gr-wrap clearfix">');
     document.write('<div class="nav"><ul id="J_web_menu">');
-    document.write('<li><a href="/index.html">首页</a></li>');
-document.write('<li><a href="/products/index.html">基金超市</a>');
+    document.write('<li><a href="' + rootPath + '/index.html">首页</a></li>');
+document.write('<li><a href="' + rootPath + '/products/index.html">基金超市</a>');
 document.write('</li>');
-document.write('<li><a href="/school/jczs/index.html">基金学院</a>');
+document.write('<li><a href="' + rootPath + '/school/jczs/index.html">基金学院</a>');
 document.write('</li>');
 document.write('<li><div class="searchInput">');
 document.write('<input type="text" maxlength="12"  id="searchString" name="queryString" placeholder="全部产品名称/代码" />');
@@ -48,14 +57,14 @@ document.write('<div class="footer">');
     document.write('<div class="footer-content clearfix">');
     document.write('<div class="footer-info">');
         document.write('<div class="footer_row2">');
-    document.write('<a href="/contents/2022/7/29-1d6ae5023648450d90e805f84e6de853.html" title="基金风险等级" target="_blank">基金风险等级</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
-    document.write('<a href="/contents/2022/7/20-8082d390098e4e32b41531c1e2d3bffe.html" title="投资者权益须知" target="_blank">投资者权益须知</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
-    document.write('<a href="/contents/2022/7/27-8059c76898c34f2cafba870873b566ec.html" title="合格投资者说明" target="_blank">合格投资者说明</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
-    document.write('<a href="/contents/2022/7/27-d6416c4d699b437d93a850884c6e29f5.html" title="投资者告知书" target="_blank">投资者告知书</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
-    document.write('<a href="/contents/2022/7/21-336d1e21e42246fb9a3d65649e55084f.html" title="风险提示书" target="_blank">风险提示书</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
-    document.write('<a href="/contents/2022/7/22-b2dbd22a51fb4a63a34c1c09c93eb817.html" title="销售资格证" target="_blank">销售资格证</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
-    document.write('<a href="/contents/2022/7/20-8bd141eb6dcf4e3bbe706689cc1cb514.html" title="监管银行" target="_blank">监管银行</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
-    document.write('<a href="/contents/2022/7/20-47876c34f0c2414096709e16658e1172.html" title="基金销售网点" target="_blank">基金销售网点</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="' + rootPath + '/contents/2022/7/29-1d6ae5023648450d90e805f84e6de853.html" title="基金风险等级" target="_blank">基金风险等级</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="' + rootPath + '/contents/2022/7/20-8082d390098e4e32b41531c1e2d3bffe.html" title="投资者权益须知" target="_blank">投资者权益须知</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="' + rootPath + '/contents/2022/7/27-8059c76898c34f2cafba870873b566ec.html" title="合格投资者说明" target="_blank">合格投资者说明</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="' + rootPath + '/contents/2022/7/27-d6416c4d699b437d93a850884c6e29f5.html" title="投资者告知书" target="_blank">投资者告知书</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="' + rootPath + '/contents/2022/7/21-336d1e21e42246fb9a3d65649e55084f.html" title="风险提示书" target="_blank">风险提示书</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="' + rootPath + '/contents/2022/7/22-b2dbd22a51fb4a63a34c1c09c93eb817.html" title="销售资格证" target="_blank">销售资格证</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="' + rootPath + '/contents/2022/7/20-8bd141eb6dcf4e3bbe706689cc1cb514.html" title="监管银行" target="_blank">监管银行</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
+    document.write('<a href="' + rootPath + '/contents/2022/7/20-47876c34f0c2414096709e16658e1172.html" title="基金销售网点" target="_blank">基金销售网点</a>&nbsp;&nbsp;|&nbsp;&nbsp;');
     document.write('<a href="https://gs.amac.org.cn/amac-infodisc/res/pof/person/personList.html?userId=1903291909100462" title="基金从业人员公示" target="_blank">基金从业人员公示</a>');
         document.write('</div>');
     document.write('<p>Copyright &copy;2019 广发期货 版权所有&nbsp;&nbsp;</p>');

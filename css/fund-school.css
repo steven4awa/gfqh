@@ -1,6 +1,6 @@
 .banner-fund{
     width: 100%;
-    background: url('/images/fund-college.png') top center no-repeat;
+    background: url('../images/fund-college.png') top center no-repeat;
     height: 280px;
     cursor: pointer;
 }
