@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex实现导航栏</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body{
+            color: #323232;
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-size: 14px;
+            background: #F1F1F1;
+        }
+        .container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .product-nav{
+            min-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #E8F4FB;
+            height: 40px;
+        }
+
+        .product-nav .nav-left ul{
+            display: flex;
+            gap: 10px;
+            padding: 0 12px; /*列表左右内间距*/
+        }
+
+        .iconSearch::after {
+            content: "\f002"; /* Font Awesome 中搜索图标的 Unicode 编码 */
+            font-family: "Font Awesome 6 Free"; 
+            font-weight: 900;
+            position: absolute; /* 绝对定位 */
+
+            /* METHOD: 1 */
+            /* top: 50%;
+            right: 10px; 
+            transform: translateY(-50%);  */
+
+            /* METHOD: 2 */
+            right: 10px; 
+            top: 4px;
+
+            color: #007bff;    
+        }
+
+        .nav-right{
+            position: relative; /* 为了让搜索图标能够相对于输入框定位 */
+        }
+    </style>
+    <!-- STEP ONE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="product-nav">
+            <div class="nav-left">
+                <ul>
+                    <li>全部基金</li>
+                    <li>股票型</li>
+                    <li>指数型</li>
+                    <li>混合型</li>
+                    <li>债卷行</li>
+                    <li>FOF</li>
+                    <li>货币型</li>
+                    <li>QDII</li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <input type="text" id="searchStrings" placeholder="全部产品名称/代码">
+                <span class="iconSearch"><!-- 搜索图标 --></span>
+            </div>
+        </div>
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/common/index.html.js"></script>
+</head>
+<body>
+    <div class="nav">
+        <input type="text" class="searchStrings" placeholder="全部产品名称/代码">
+        <span class="iconSearch"></span>
+        <div class="result"><!--test--></div>
+    </div>
+
+    <script>
+        $(function(){
+            // 点击页面其它区域时隐藏结果面板
+            $('body').click(function(){
+                $('div.result').hide();
+            });
+
+            // 点击/聚焦输入框时显示面板，并阻止事件冒泡
+            $('.searchStrings').click(function(event){
+                event.stopPropagation();
+                // $('div.result').show();
+                showContent.call(this);
+            }).focus(function(event){
+                event.stopPropagation();
+                // $('div.result').show();
+                showContent.call(this);
+            }).keyup(function(){
+            showContent.call(this);
+            });
+        })
+
+        function showContent(){
+            $('div.result').show();
+            $('div.result').html(); // 拿到盒子的内容（<div class="result">内部的内容</div>）
+            //console.log($('div.result').html())
+            let val = $(this).val() // 获取当前输入的内容
+            //  console.log(val)
+            let context = '<ul>'
+            let newArray = arrFundProducts.filter((item)=>{
+                if(item.fundcode.indexOf(val) != -1 || item.fundname.indexOf(val) != -1){
+                    context += '<li>' + item.fundcode+'<br/>'+item.fundname+'</li>'
+                }
+            })
+            context +=  '</ul>'
+            $('div.result').html(context)
+        }
+    </script>
+</body>
+</html>

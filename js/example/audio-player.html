@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频播放</title>
+</head>
+<body>
+    <audio id="audio" controls>
+        <source src="/audio/cet4_2025_06_1.mp3" type="audio/mpeg">
+    </audio>
+
+    <ul>
+        <li><a href="#" onclick="jump(43)">00:00:43 - News 1</a></li>
+        <li><a href="#" onclick="jump(161)">00:02:41 - News report 2</a></li>
+        <li><a href="#" onclick="jump(270)">00:04:30 - News 3</a></li>
+        <li><a href="#" onclick="jump(464)">00:07:44 - Conversation 1</a></li>
+        <li><a href="#" onclick="jump(651)">00:10:51 - Conversation 2</a></li>
+    </ul>
+
+    <script>
+    function jump(time) {
+    const audio = document.getElementById("audio");
+    audio.currentTime = time;
+    audio.play();
+    }
+    </script>
+</body>
+</html>

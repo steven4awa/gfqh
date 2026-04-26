@@ -1,0 +1,633 @@
+/* 让button竖着排 */
+button {
+    display: flex;
+    flex-direction: column;
+    background-color: #E8F4FB !important;
+    color: black;
+    line-height: 40px;
+    border: none;
+    position: relative;
+    font-size: 15px;
+}
+h1{
+    font-size: 18px;
+}
+.button-actived{
+    background-color: #2296dd !important;
+    color: white;
+}
+
+.right .head{
+    border-left: #007bff solid 4px;
+    padding-left: 5px;
+    margin-bottom: 39px;
+}
+
+.fund-content button span{
+    position: relative;
+    left: -25px;
+}
+
+.header{
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /*  垂直居中 */
+    width: auto;
+    height: 37px;
+    background-color: #e9e9e9;
+}
+
+.header .phone-number {
+    /* margin-right: 20px; 调整电话号码与其他元素的间距 */
+    min-width: 1100px;/* 设置最小宽度，确保电话号码不会被挤压 */
+    font-size: 12px;
+    color: #333;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-end; /* 将电话号码靠右对齐 */
+    /* margin-left: auto; 添加这个，让它推到右侧 */
+}
+
+/* 使用伪元素添加图标 */
+.icon-phone::before {
+    content: "\f095"; /* Font Awesome 中电话图标的 Unicode 编码 */
+    font-family: "Font Awesome 6 Free"; /* 指定使用图标字体 */
+    font-weight: 900;
+    margin-right: 8px; /* 图标和文字的间距 */
+    color: #007bff;    
+}
+
+.iconSearch::after {
+    content: "\f002"; /* Font Awesome 中搜索图标的 Unicode 编码 */
+    font-family: "Font Awesome 6 Free"; 
+    font-weight: 900;
+    position: absolute; /* 绝对定位 */
+    right: 10px; 
+    top: 50%;
+    transform: translateY(-50%); 
+    color: #007bff;    
+}
+ 
+
+.nav{
+    width: 100%;
+    display: flex;
+    height: 80px;
+    background-color: white;
+    justify-content: center;
+}
+
+.nav ul{
+    display: flex;;
+
+}
+
+.nav .center{
+    width: 1100px;
+    display: flex;
+    align-items: center; /* 上中下居中 */
+    justify-content: space-between;
+}
+
+.nav .center .center-right{
+    display: flex;
+    align-items: center; /* 上中下居中 */
+    justify-content: space-between;
+}
+
+.nav ul li{
+    display: flex;
+    padding: 10px;
+    font-size: 15px;
+}
+
+
+
+.index-nav{
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
+}
+
+.index-shop-nav{
+    color: #007bff;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
+}
+
+.nav-right input{
+    border: none;
+    outline: none;
+    margin-left: 10px;
+}
+
+.nav-right{
+    display: flex;
+    align-items: center; /* 上中下居中 */
+    justify-content: space-between;
+    border: 1px solid #007bff;
+    width: 250px;
+    height: 35px;
+    position: relative; /* 添加相对定位 */
+    background-color: white;
+    margin-left: 10px;
+}
+
+.banner{
+    width: 100%;
+    height: 450px;
+    background: url(../upload/picture/guanggaotu.jpg) no-repeat center;
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+.banner-market {
+    width: 100%;
+    height: 300px;
+    background: url(/images/supermarket.png) top center no-repeat;
+    cursor: pointer; /* 鼠标悬停时显示手型 */
+}
+
+
+
+.hot{
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    margin-top: 30px;
+
+}
+
+.hot .container{
+    width: 1100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hot ul{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.hot ul li{
+    display: flex;
+    flex-direction: column;
+    width: 252px;
+    height: 350px;
+    border-radius: 5px;
+    align-items: center;
+    background: url('../images/hotfundbg.png') no-repeat right bottom;
+    background-color: white;
+    align-content: center;
+    justify-content: flex-start;
+}
+
+.hot ul li>div:first-child::before{ /*选择li的第一个亲儿子，也就是第一个div（直接子元素）*/
+    content: "\f521";
+    font-family: "Font Awesome 6 Free"; /* 指定使用图标字体 */
+    font-weight: 900;
+    color: #df4001; 
+}
+
+.hot ul li>div:first-child{
+    width: 215px;
+    height: 40px;
+    margin: 26px 0 0 0; /*上外边距5px*/
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.hot li div:nth-child(2){
+    width: 212px;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 0 12px; /*左右内边距12px*/
+    overflow: hidden; /* 超出部分隐藏 */
+    white-space: nowrap; /* 不换行 */
+}
+
+.hot li div:nth-child(3){
+    font-size: 40px;
+    color: red;
+    margin-top: 20px;
+}
+
+.hot li div:nth-child(4){
+    color: grey;
+    margin-top: 10px;
+}
+
+.hot li div:last-child{
+    width: 170px;
+    height: 42px;
+    background-color: #FD7801;
+    border-radius: 4px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 20px;
+    color: white;
+}
+
+/* product */
+
+.product{
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.product .title{
+    width: 1100px;
+    display: flex;;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.product .title p:first-child{
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.product-nav{
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    margin-top: 20px;
+    align-items: center;
+    background-color: #E8F4FB;
+    line-height: 40px;
+    height: 50px;
+}
+
+.product-nav ul{
+    
+    display: flex;
+    padding: 0 10px;
+    gap: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+  
+}
+
+
+/* table */
+.product table{
+    width: 1100px;
+    margin-top: 10px;
+    border-collapse: collapse; /* 合并边框 */
+}
+
+.product table tr{
+    height: 60px;
+    text-align: center;
+}
+
+.product thead tr{
+    background-color: #e8f0fb;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.product thead tr td:first-child{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.product tbody tr td:first-child{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.product tbody tr{
+    background-color: white;
+    border-bottom: 1px dashed gray;
+}
+
+.product tbody tr:hover{
+    position: relative; /*这个元素会创建一个新的定位上下文*/
+    cursor: pointer;
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.3); /* 添加阴影效果 */
+    /* box-shadow: x偏移 y偏移 模糊半径 颜色; */
+}
+
+.product tbody tr td span{
+    display: inline-block;
+    border: 1px solid #ff9b05;
+    color: #ff9b05;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.product tbody tr td:last-child{
+    width: 180px;
+}
+
+.product tbody tr td:first-child{
+    width: 280px;
+}
+
+.footer{
+    width: 100%;
+    height: 70px;
+    background-color: #85C4EA;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 16px;
+    padding-bottom: 10px;
+}
+
+.footer ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    /* margin-top: 3px; */
+    margin: 0;
+}
+
+.footer ul li{
+    padding: 0 10px;
+    font-size: 12px;
+    font-weight: 200;
+    display: flex;
+}
+
+.footer{
+    font-size: 12px;
+}
+
+.footer ul li:not(:last-child){ /*除了最后一个li以外*/
+    border-right: 1px solid white;
+}
+
+/* ------------------ */
+
+.result{
+    position: absolute;
+    left: 0;
+    top: 37px;
+    width: 230px;
+    padding: 10px;
+    height: auto;
+    max-height: 600px;
+    overflow-y: auto; /*滚动条*/
+    background-color: rgb(255, 255, 255);
+    z-index: 100; /*显示在其他元素前面*/
+   display: none;
+}
+
+.nav-right {
+    position: relative; /* 必须加这一行，让 .result 相对于它定位 */
+    
+}
+
+.nav-right .result li{
+    font-size: 14px;
+    border-bottom: 1px solid blanchedalmond;
+}
+
+div.result ul{
+    display: block!important;
+}
+
+
+.active{
+    background-color: #2296dd;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.customer-service{
+    position: fixed;
+    cursor: pointer;
+    background-image: url(/images/kf.png);
+    width: 50px;
+    height: 50px;
+    display: block;
+    top: 70%;
+    right: 100px;
+}
+
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.content-center {
+    width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #E8F4FB;
+}
+
+.filter-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-label {
+    
+    color: #333;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter-btn {
+    padding: 10px 18px;
+    border: none;
+    background-color: #E8F4FB;
+    
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+
+.filter-btn.active {
+    background-color: #2296dd;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-content{
+    width: 100%;
+    /* border: 1px solid black; */
+    height: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    width: 94%;
+    height: 90%;
+    /* border: 1px solid black; */
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding-left: 50px;
+   background-color: #E8F4FB;
+   gap: 20px;
+   padding-top: 17px;
+}
+
+.content ul{
+    display: flex;
+    gap: 38px;
+    
+}
+.content ul li{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+     width: 75px;
+    height: 41px;
+}
+
+.list-option{
+    margin-left: 80px;
+    
+}
+
+.actived{
+    background-color:#2296dd;
+    color: white;
+    /* width: 67px;
+    height: 41px; */
+}
+
+.list-down{
+    
+}
+
+.fund-content{
+    width: 100%;
+}
+
+.fund-content .center-content{
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0px 0 20px;
+    width: 825pt;
+}
+
+.content-address{
+    margin: 15px 0 15px 0px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.fl-left{
+    float: left;
+}
+
+.left-nav-wrap{
+    float: left;
+    width: 200px;
+    border: 0px solid #ccc;
+}
+
+.center-content.enable-flex{
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: -14px;
+}
+
+.center-content.enable-flex > .left{
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* border: 1px solid black ; */
+}
+/* .center-content .enable-flex .left button{
+    display: flex;
+} */
+
+.center-content.enable-flex >.right{
+    width: 625px;
+}
+
+.center-content .enable-flex .left button {
+    width: 100%;            /* 让按钮充满侧边栏宽度 */
+    padding: 10px 15px;     /* 增加点击内边距 */
+    text-align: center;     /* 文字居中 */
+    cursor: pointer;        /* 鼠标悬停显示小手 */
+    background-color: #fff; /* 背景色 */
+    border: 1px solid #ddd; /* 边框 */
+    border-radius: 4px;     /* 圆角 */
+    transition: 0.2s;       /* 增加过渡效果 */
+}
+
+.center-content.enable-flex .right{
+    background-color: white;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 1px 2px 0 #e6e6e6;
+    min-height: 450px;
+    padding: 14px 20px;
+    width: 850px;
+}
+
+.center-content.enable-flex li span{
+    float: right;
+    color: #999999;
+    font-family: arial;
+    font-size: 12px;
+}
+
+.center-content.enable-flex li a{
+    /* float: left; */
+   
+    font-size: 14px;
+}
+
+.clearfix{
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #e6e6e6;
+    line-height: 50px;
+    font-size: 14px;
+}
+
+.page{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.current-page-active{
+    color: #2296dd!important;
+}

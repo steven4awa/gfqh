@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插入icon</title>
+    <!-- STEP ONE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+     
+     <style>
+        /* Method: 1 */
+        ol li:first-child:after{
+            content: "\f521"; /*直接使用unicode*/
+            font-family: "Font Awesome 6 Free"; /* 指定使用图标字体 */
+            font-weight: 900;
+            color: #df4001; 
+        }
+     </style>
+</head>
+<body>
+    <H2>插入图表的方法</H2>
+    访问：<a href="https://fontawesome.com/icons/">https://fontawesome.com/icons/</a>查看icon
+    <ol>
+        <li></li>
+
+        <!-- Method: 2 -->
+        <li><i class="fa-solid fa-house"></i></li>
+        <li></li>
+    </ol>
+</body>
+</html>

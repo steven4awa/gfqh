@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阻止冒泡</title>
+    <style>
+        div{
+            border: 1px dashed black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #big{
+            width: 100px;
+            height: 100px;
+        }
+        #middle{
+            width: 80px;
+            height: 80px;
+        }
+
+        #smallest{
+            width: 50px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <p>This page is to show the example of preventing event flow in javascript.</p>
+    <div id="big">
+        <div id="middle">
+            <div id="smallest">box</div>
+        </div>
+    </div>
+    <script>
+        const big = document.getElementById('big')
+        const middle = document.getElementById('middle')
+        const smallest = document.getElementById('smallest')
+
+        big.addEventListener('click', () => {
+            console.log('The biggest div')
+        })
+        middle.addEventListener('click', () => {
+            console.log('The middle div')
+        })
+        smallest.addEventListener('click', (e) => {
+            console.log('The smallest div')
+            e.stopPropagation() //停止事件继续传播
+        })
+    </script>
+</body>
+</html>

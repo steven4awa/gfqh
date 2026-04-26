@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10s倒计时</title>
+</head>
+<body>
+    <div>
+        <p>
+            <button>canceal</button>
+            <button>pay</button>
+        </p>
+    </div>
+
+    <script>
+        // getElementsByClassName 返回的是一个类数组（HTMLCollection），访问[1] -> 第二个元素 (<button>pay</button>)
+        document.getElementsByTagName('button')[1].onclick = function() {
+            let result = window.confirm('Are you sure to pay?');
+            if(result){
+                // location.href = '/index.html'; // 直接用根目录
+                location.href = '/back-to-countdown.html';
+            }
+        }
+    </script>
+</body>
+</html>

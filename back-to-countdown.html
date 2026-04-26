@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>返回页面 10s-countdown</title>
+</head>
+<body>
+    <div>
+        <p>you have paid</p>
+        <p>you will be back after <span id="back">3</span>s.</p>
+        <button>go back instantly</button>
+    </div>
+    <script>
+        window.onload = function(){
+            let timer = 3;
+            setInterval(()=>{
+                timer--;
+                document.getElementById('back').innerText = timer;
+                if(timer == 0){
+                    location.href = 'js/example/10s-countdown.html';
+                }
+            },1000)
+        }
+    </script>
+</body>
+</html>

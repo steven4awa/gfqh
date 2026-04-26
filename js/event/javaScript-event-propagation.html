@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件流</title>
+    <style>
+        img{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://pic1.imgdb.cn/item/69d5f5c1fe07599d0e208124.png" alt="js event flow">
+    <ol>
+        <li>content</li>
+        <li>content</li>
+        <li>content</li>
+    </ol>
+    <script>
+        const img  = document.getElementsByTagName('img')[0]
+        img.addEventListener('click', (event)=>{
+            // 事件处理
+        })
+        const orderedList = document.getElementsByTagName('ol')[0]
+        orderedList.addEventListener('click',(event)=>{
+            console.log(event.currentTarget) // 当前元素也就是 ol
+            console.log(event.target) // li 实际点击的元素
+            event.stopPropagation()
+        })
+        document.getElementsByTagName('body')[0].addEventListener('click', (e)=>{
+            console.log('body was clicked...') // 不执行
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<input type="text" id="myInput" placeholder="点我、打字、试试看...">
+<button id="myButton">提交</button>
+
+<script>
+  const input = document.getElementById('myInput');
+
+  // 1. Focus: 只要你点击了输入框，或者用 Tab 键选中它，就会触发
+  input.addEventListener('focus', () => {
+    console.log('【Focus】: 输入框变亮了，准备输入');
+    input.style.borderColor = 'blue'; 
+  });
+
+  // 2. Keyup: 每当你按下一个键并松开，就会触发（常用于搜索联想）
+  input.addEventListener('keyup', (event) => {
+    console.log('【Keyup】: 你按下了 ' + event.key + '，当前内容是: ' + input.value);
+  });
+
+  // 3. Click: 只有在完整执行了“按下+松开”鼠标动作时触发
+  const btn = document.getElementById('myButton');
+  btn.addEventListener('click', () => {
+    alert('【Click】: 你点击了提交按钮！内容是：' + input.value);
+  });
+</script>

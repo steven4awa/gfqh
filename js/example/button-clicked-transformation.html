@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击按钮变换样式</title>
+    <style>
+        #changed{
+            font-size: 19px;
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <button id="changed">1</button>
+    <button>2</button>
+    <button>3</button>
+
+    <script>
+        const btns = document.getElementsByTagName('button')
+        for(let i = 0; i<btns.length; i++){
+            btns[i].addEventListener('click', changecolor)
+        }
+        function changecolor(e){
+           // 先把所有按钮的 id 去掉
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].removeAttribute('id');
+            }
+
+            // 给当前点击的按钮加上 id
+            e.currentTarget.id = 'changed';
+        }
+    </script>
+</body>
+</html>

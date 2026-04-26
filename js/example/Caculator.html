@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用JS实现计算器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        .caculator{
+            width: 400px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;    /* 让子元素上下排列 */
+            align-items: center;       /* 让子元素在交叉轴（水平方向）居中 */
+            padding-top: 20px;         /* 可选：给顶部留点间距 */
+           
+        }
+        #display-screen{
+            width: 90%;
+            height: 100px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            text-align: center;
+        }
+
+        .number{
+            width: 90%;
+            border: 1px solid #000;
+            height: 80%;
+            margin: 5px 0;
+            flex: 1;  /* 让数字区占据剩余空间 */
+            display: flex;
+            justify-content: center;
+        }
+
+        ul{
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            /* align-items: center; */
+            
+        }
+
+        li{
+            /* 每个占据 25% 宽度 */
+            width: 25%; 
+            height: 25%; /* 假设有4行，每行占 25% */
+            border: 1px solid #000;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="caculator">
+        <div id="display-screen"></div>
+        <div class="number">
+            <ul>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>+</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>*</li>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>-</li>
+                <li>0</li>
+                <li>C</li>
+                <li>/</li>
+                <li>=</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // document.querySelectorAll('.number li').forEach(button => {
+        //     button.addEventListener('click', () => {
+        //         const display = document.getElementById('display-screen');
+        //         const value = button.textContent;
+
+        //         if (value === 'C') {
+        //             display.textContent = '';
+        //         } else if (value === '=') {
+        //             try {
+        //                 display.textContent = eval(display.textContent);
+        //             } catch (e) {
+        //                 display.textContent = 'Error';
+        //             }
+        //         } else {
+        //             display.textContent += value;
+        //         }
+        //     });
+        // });
+        
+        /**
+         * querySelectorAll() 方法返回文档中匹配指定 CSS 选择器的所有元素，返回 NodeList 对象。
+         * NodeList 对象表示节点的集合。可以通过索引访问，索引值从 0 开始。
+         */
+        // let lis = document.querySelectorAll('.number li')
+        // for(let i = 0; i< lis.length; i++){
+        //     // console.log(lis[i])
+        //     lis[i].addEventListener('click', (e) => {
+        //         const display = document.getElementById('display-screen')
+        //         const value = e.target.textContent
+        //         if(lis[i].textContent != '=' && lis[i].textContent !='C'){
+        //             display.textContent += value
+        //         } else if(lis[i].textContent == 'C'){
+        //             display.textContent = '';
+        //         } else{
+        //             display.textContent = eval(display.textContent);
+        //         }
+        //     })
+        // }
+
+        let lis = document.querySelectorAll('.number li')
+        const display = document.getElementById('display-screen')
+        let displayNum = ''
+        for(let i = 0; i< lis.length; i++){
+            lis[i].addEventListener('click', function(){
+                if(lis[i].textContent != '+'){
+                    displayNum += lis[i].textContent
+                    display.textContent = displayNum
+                }
+                
+            })
+        }
+    </script>
+</body>
+</html>

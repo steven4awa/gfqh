@@ -1,0 +1,26 @@
+.banner-fund{
+    width: 100%;
+    background: url('/images/fund-college.png') top center no-repeat;
+    height: 280px;
+    cursor: pointer;
+}
+
+.page a{
+    font-size: 12px;
+    display: inline-block;
+    padding: 2px 12px;
+    border: 1px solid #e6e6e6;
+    vertical-align: middle;
+    line-height: 24px;
+    background: #ffffff;
+}
+
+.page {
+    padding-right: 88px;
+}
+
+#pageOn{
+    color: #2296dd;
+    font-weight: 700;
+}
+
