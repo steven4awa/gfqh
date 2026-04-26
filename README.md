@@ -4,6 +4,7 @@ This is a project for me to take notes on the various things I learn about progr
 software development, and related topics. The goal is to have a single place where I can keep track of all the things I learn, and to be able to easily reference them in the future.
 
 # The website that the project shows
+visit: https://steven4awa.github.io/gfqh/
 Intended to be published via github page. And this project is basiclly a static website.
 
 # Key Points of this project that I have learned:
